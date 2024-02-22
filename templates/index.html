@@ -21,24 +21,28 @@
     <h1>Gençler İçin Sınav</h1>
     <form id="quizForm">
        
-        <h2>Soru 1: Adınız nedir?</h2>
-        <input type="text" name="username">
+        <h2>Soru 1: Python dilinde "if" ve "else" anahtar kelimeleri hangi amaçla kullanılır?</h2>
+        <input type="radio" name="question1" value="condition"> Koşullu ifadeler oluşturmak için<br>
+        <input type="radio" name="question1" value="loop"> Döngülerde kullanılan kontrol ifadeleri<br>
+        <input type="radio" name="question1" value="function"> Fonksiyon tanımlamak için<br>
 
         
-        <h2>Soru 2: En sevdiğiniz renk hangisidir?</h2>
-        <input type="radio" name="question1" value="red"> Kırmızı<br>
-        <input type="radio" name="question1" value="blue"> Mavi<br>
-        <input type="radio" name="question1" value="green"> Yeşil<br>
+        <h2>Soru 2: Python dilinde hangi kütüphane, yapay zeka geliştirmek için kullanılır?</h2>
+        <input type="radio" name="question2" value="numpy"> NumPy<br>
+        <input type="radio" name="question2" value="pandas"> Pandas<br>
+        <input type="radio" name="question2" value="tensorflow"> TensorFlow<br>
 
         
-        <h2>Soru 3: En sevdiğiniz hayvan hangisidir?</h2>
-        <input type="radio" name="question2" value="dog"> Köpek<br>
-        <input type="radio" name="question2" value="cat"> Kedi<br>
-        <input type="radio" name="question2" value="parrot"> Papağan<br>
+        <h2>Soru 3: Yapay zeka alanında kullanılan bir dil işleme tekniği hangisidir?</h2>
+        <input type="radio" name="question3" value="ml"> Makine öğrenmesi<br>
+        <input type="radio" name="question3" value="nlp"> Doğal Dil İşleme (NLP)<br>
+        <input type="radio" name="question3" value="cv"> Bilgisayarlı Görü (Computer Vision)<br>
 
        
-        <h2>Soru 4: Hobileriniz veya ilgi alanlarınız neler?</h2>
-        <textarea name="question3" rows="4" cols="50"></textarea>
+        <h2>Soru 4: Python dilinde bir değişkenin değerini ekrana yazdırmak için hangi komut kullanılır?</h2>
+        <input type="radio" name="question4" value="show"> show<br>
+        <input type="radio" name="question4" value="display"> display<br>
+        <input type="radio" name="question4" value="print"> print<br>
 
         <br>
         <input type="submit" value="Cevapları Gönder">
@@ -78,23 +82,23 @@
 
         function calculateScore() {
             
-            var username = document.getElementsByName('username')[0].value;
             var question1Answer = document.querySelector('input[name="question1"]:checked');
             var question2Answer = document.querySelector('input[name="question2"]:checked');
-            var question3Answer = document.getElementsByName('question3')[0].value;
+            var question3Answer = document.querySelector('input[name="question3"]:checked');
+            var question4Answer = document.querySelector('input[name="question4"]:checked');
 
             
             var score = 0;
-            if (question1Answer && question1Answer.value === "red") {
+            if (question1Answer && question1Answer.value === "condition") {
                 score += 25;
             }
-            if (question2Answer && question2Answer.value === "dog") {
+            if (question2Answer && question2Answer.value === "tensorflow") {
                 score += 25;
             }
-            if (question3Answer.trim() !== "") {
+            if (question3Answer && question3Answer.value === "nlp") {
                 score += 25;
             }
-            if (username.trim() !== "") {
+            if (question4Answer && question4Answer.value === "print") {
                 score += 25;
             }
 
@@ -103,5 +107,4 @@
     </script>
 </body>
 </html>
-
-<a href="http://127.0.0.1:5000/">Ana Sayfaya Geri Dön</a>
+<a href="https://muharremtopakkaya.pythonanywhere.com/">Ana Sayfaya Geri Dön</a>
